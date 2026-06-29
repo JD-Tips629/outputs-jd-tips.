@@ -1,0 +1,83 @@
+{
+  "followers": [],
+  "tips": [
+    {
+      "id": "tip-benfica-porto",
+      "homeTeam": "Benfica",
+      "awayTeam": "Porto",
+      "match": "Benfica vs Porto",
+      "startTime": "2026-06-29T20:00:00.000Z",
+      "market": "Mais de 1.5 golos",
+      "odd": "1.58",
+      "access": "free",
+      "confidence": "Media",
+      "status": "active",
+      "resultAmount": null,
+      "createdAt": "2026-06-29T12:00:00.000Z",
+      "settledAt": null
+    },
+    {
+      "id": "tip-real-valencia",
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Valencia",
+      "match": "Real Madrid vs Valencia",
+      "startTime": "2026-06-29T21:00:00.000Z",
+      "market": "Real Madrid vence",
+      "odd": "1.72",
+      "access": "free",
+      "confidence": "Alta",
+      "status": "active",
+      "resultAmount": null,
+      "createdAt": "2026-06-29T12:05:00.000Z",
+      "settledAt": null
+    },
+    {
+      "id": "tip-arsenal-chelsea",
+      "homeTeam": "Arsenal",
+      "awayTeam": "Chelsea",
+      "match": "Arsenal vs Chelsea",
+      "startTime": "2026-06-28T18:30:00.000Z",
+      "market": "Ambas marcam",
+      "odd": "1.91",
+      "access": "vip",
+      "confidence": "Alta",
+      "status": "green",
+      "resultAmount": null,
+      "createdAt": "2026-06-28T11:00:00.000Z",
+      "settledAt": "2026-06-28T21:00:00.000Z"
+    },
+    {
+      "id": "tip-inter-napoli",
+      "homeTeam": "Inter",
+      "awayTeam": "Napoli",
+      "match": "Inter vs Napoli",
+      "startTime": "2026-06-27T19:45:00.000Z",
+      "market": "Inter empate anula",
+      "odd": "1.67",
+      "access": "vip",
+      "confidence": "Muito alta",
+      "status": "red",
+      "resultAmount": null,
+      "createdAt": "2026-06-27T10:30:00.000Z",
+      "settledAt": "2026-06-27T22:00:00.000Z"
+    }
+  ],
+  "paymentRequests": [],
+  "history": [
+    {
+      "id": "tip-arsenal-chelsea",
+      "amount": 0,
+      "status": "green",
+      "match": "Arsenal vs Chelsea",
+      "date": "28/06/2026"
+    },
+    {
+      "id": "tip-inter-napoli",
+      "amount": 0,
+      "status": "red",
+      "match": "Inter vs Napoli",
+      "date": "27/06/2026"
+    }
+  ],
+  "wallet": 0
+}

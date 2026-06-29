@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#064e3b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="JD-Tips" />
+    <title>JD-Tips</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand" id="brandAccess">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img">
+              <defs>
+                <linearGradient id="jdLogoGradient" x1="10" y1="58" x2="54" y2="6" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#064e3b" />
+                  <stop offset="1" stop-color="#10b981" />
+                </linearGradient>
+              </defs>
+              <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#jdLogoGradient)" />
+              <path class="shield-mark" d="M32 9 L49 16 V29 C49 41 42 50 32 55 C22 50 15 41 15 29 V16 Z" />
+              <path class="chart-mark" d="M20 39 L28 31 L34 35 L44 22" />
+              <path class="arrow-mark" d="M39 22 H44 V27" />
+              <path class="star-mark" d="M32 16 L34 21 L39 21 L35 24 L37 29 L32 26 L27 29 L29 24 L25 21 L30 21 Z" />
+              <text class="logo-text" x="32" y="58" text-anchor="middle">JD</text>
+            </svg>
+          </span>
+          <div>
+            <strong>JD-Tips</strong>
+            <small>Palpites com estrategia</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active" data-section="dashboard" type="button">
+            <span>Inicio</span>
+          </button>
+          <button class="nav-item" data-section="tips" type="button">
+            <span>Palpites</span>
+          </button>
+          <button class="nav-item" data-section="vip" type="button">
+            <span>VIP</span>
+          </button>
+          <button class="nav-item" data-section="wallet" type="button">
+            <span>Ganhos</span>
+          </button>
+          <button class="nav-item" data-section="results" type="button">
+            <span>Resultados</span>
+          </button>
+          <button class="nav-item admin-only hidden" data-section="admin" type="button">
+            <span>Admin</span>
+          </button>
+        </nav>
+
+        <div class="membership-card">
+          <span class="eyebrow">Estado da conta</span>
+          <strong id="membershipLabel">Free</strong>
+          <p id="membershipText">Ativa o VIP para ver palpites premium.</p>
+          <button class="primary small" id="quickVipBtn" type="button">Entrar no VIP</button>
+          <button class="ghost small admin-only hidden" id="adminLogoutBtn" type="button">Sair do Admin</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Apostas responsaveis</p>
+            <h1>Palpites Free e VIP para acompanhares os teus jogos</h1>
+          </div>
+          <div class="top-actions">
+            <button class="ghost" id="themeBtn" type="button">Modo escuro</button>
+            <button class="primary" id="openVipBtn" type="button">Assinar VIP</button>
+          </div>
+        </header>
+
+        <section class="section active" id="dashboard">
+          <div class="metrics">
+            <article>
+              <span>Taxa simulada</span>
+              <strong>78%</strong>
+              <small>Ultimos 30 palpites</small>
+            </article>
+            <article>
+              <span>Palpites hoje</span>
+              <strong id="todayCount">0</strong>
+              <small>Free e VIP</small>
+            </article>
+            <article>
+              <span>Ganhos registados</span>
+              <strong id="profitMetric">0 €</strong>
+              <small>Greens e Reds</small>
+            </article>
+          </div>
+
+          <div class="hero-panel">
+            <div>
+              <span class="eyebrow">JD-Tips VIP</span>
+              <h2>Transforma os teus palpites numa comunidade paga</h2>
+              <p>
+                Publica entradas gratuitas para atrair novos usuarios e reserva as odds mais fortes para assinantes VIP.
+              </p>
+              <div class="hero-actions">
+                <button class="primary" data-section-target="tips" type="button">Ver palpites</button>
+                <button class="ghost" data-section-target="vip" type="button">Ver planos</button>
+              </div>
+            </div>
+            <div class="ticket">
+              <span class="ticket-label">Bilhete em destaque</span>
+              <strong>Over 1.5 golos</strong>
+              <div class="growth-chart" aria-label="Grafico de crescimento">
+                <span style="height: 34%"></span>
+                <span style="height: 48%"></span>
+                <span style="height: 42%"></span>
+                <span style="height: 68%"></span>
+                <span style="height: 88%"></span>
+                <svg viewBox="0 0 120 56" aria-hidden="true">
+                  <path d="M6 48 L34 31 L58 38 L86 19 L112 8" />
+                  <path d="M101 8 H112 V19" />
+                </svg>
+              </div>
+              <div class="ticket-row">
+                <span>Odd</span>
+                <b>1.62</b>
+              </div>
+              <div class="ticket-row">
+                <span>Stake</span>
+                <b>Media</b>
+              </div>
+              <div class="ticket-row">
+                <span>Acesso</span>
+                <b>Free</b>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="section" id="tips">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Palpites</p>
+              <h2>Entradas publicadas</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="Filtro de palpites">
+              <button class="segment active" data-filter="all" type="button">Todos</button>
+              <button class="segment" data-filter="free" type="button">Free</button>
+              <button class="segment" data-filter="vip" type="button">VIP</button>
+            </div>
+          </div>
+
+          <div class="tips-grid" id="tipsGrid"></div>
+
+          <form class="tip-form admin-only hidden" id="tipForm">
+            <div class="form-title">
+              <h3 id="tipFormTitle">Novo palpite</h3>
+              <span id="tipFormHint">Guardado no servidor</span>
+            </div>
+            <label>
+              Equipa casa
+              <input id="homeTeamInput" required placeholder="Ex: Inter" />
+            </label>
+            <label>
+              Equipa visitante
+              <input id="awayTeamInput" required placeholder="Ex: Milan" />
+            </label>
+            <label>
+              Hora de inicio
+              <input id="startTimeInput" required type="datetime-local" />
+            </label>
+            <label>
+              Mercado
+              <input id="marketInput" required placeholder="Ex: Vitoria casa" />
+            </label>
+            <label>
+              Odd
+              <input id="oddInput" required type="number" step="0.01" min="1.01" placeholder="1.85" />
+            </label>
+            <label>
+              Tipo
+              <select id="accessInput">
+                <option value="free">Free</option>
+                <option value="vip">VIP</option>
+              </select>
+            </label>
+            <input id="editingTipId" type="hidden" />
+            <button class="primary" id="tipSubmitBtn" type="submit">Publicar</button>
+            <button class="ghost hidden" id="cancelEditBtn" type="button">Cancelar edicao</button>
+          </form>
+        </section>
+
+        <section class="section" id="vip">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Planos</p>
+              <h2>Escolhe o acesso VIP</h2>
+            </div>
+          </div>
+
+          <div class="plans">
+            <article class="plan">
+              <span>Semanal</span>
+              <strong>25 €</strong>
+              <p>Acesso a palpites VIP durante 7 dias.</p>
+              <button class="primary subscribe" data-plan="Semanal" type="button">Ver pagamento</button>
+            </article>
+            <article class="plan featured">
+              <span>Mensal</span>
+              <strong>80 €</strong>
+              <p>Melhor custo para membros ativos da comunidade.</p>
+              <button class="primary subscribe" data-plan="Mensal" type="button">Ver pagamento</button>
+            </article>
+            <article class="plan">
+              <span>Premium</span>
+              <strong>120 €</strong>
+              <p>VIP completo com entradas de maior confianca.</p>
+              <button class="primary subscribe" data-plan="Premium" type="button">Ver pagamento</button>
+            </article>
+          </div>
+
+          <div class="payment-panel" id="paymentPanel">
+            <div class="payment-copy">
+              <p class="eyebrow">Pagamento VIP</p>
+              <h3>Dados para receber clientes</h3>
+              <p>Paga por MB WAY ou transferencia/Multibanco e envia o pedido pelo WhatsApp. Depois da confirmacao, recebes o codigo VIP.</p>
+            </div>
+            <div class="payment-methods">
+              <article>
+                <span>MB WAY</span>
+                <strong id="mbwayNumber">+351 929 298 302</strong>
+                <button class="ghost copy-btn" data-copy-target="mbwayNumber" type="button">Copiar</button>
+              </article>
+              <article>
+                <span>IBAN / Multibanco</span>
+                <strong id="ibanNumber">PT50 0007 0000 0085 3052 8242 3</strong>
+                <small id="accountHolder">Titular: JD-Tips</small>
+                <button class="ghost copy-btn" data-copy-target="ibanNumber" type="button">Copiar</button>
+              </article>
+            </div>
+
+            <form class="payment-form" id="paymentForm">
+              <div class="form-title">
+                <h3>Confirmar pagamento</h3>
+                <span>Pedido enviado por WhatsApp</span>
+              </div>
+              <label>
+                Plano
+                <select id="paymentPlan">
+                  <option value="Semanal">Semanal - 25 €</option>
+                  <option value="Mensal">Mensal - 80 €</option>
+                  <option value="Premium">Premium - 120 €</option>
+                </select>
+              </label>
+              <label>
+                Nome do cliente
+                <input id="clientName" required placeholder="Nome completo" />
+              </label>
+              <label>
+                WhatsApp / telefone
+                <input id="clientContact" required placeholder="+351..." />
+              </label>
+              <label>
+                Metodo usado
+                <select id="paymentMethod">
+                  <option value="MB WAY">MB WAY</option>
+                  <option value="IBAN / Multibanco">IBAN / Multibanco</option>
+                </select>
+              </label>
+              <label>
+                Referencia
+                <input id="paymentReference" required placeholder="Ex: JDVIP-1234" />
+              </label>
+              <button class="primary" type="submit">Enviar pedido VIP</button>
+            </form>
+
+            <form class="unlock-form" id="unlockForm">
+              <div>
+                <h3>Entrar como VIP</h3>
+                <p>Depois de confirmares o pagamento do cliente, envia-lhe o codigo VIP.</p>
+              </div>
+              <input id="vipCodeInput" placeholder="Codigo VIP" />
+              <button class="primary" type="submit">Desbloquear VIP</button>
+            </form>
+          </div>
+
+          <div class="notice">
+            <strong>Nota importante</strong>
+            <p>
+              Para producao com pagamentos automaticos, liga uma plataforma de pagamentos. Nesta versao, confirmas MB WAY
+              ou Multibanco manualmente e envias o codigo VIP ao cliente.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="wallet">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Ganhos</p>
+              <h2>Carteira de resultados</h2>
+            </div>
+          </div>
+
+          <div class="wallet-panel">
+            <div>
+              <span>Total registado</span>
+              <strong id="walletTotal">0 €</strong>
+              <p>Controla manualmente os ganhos dos palpites acertados.</p>
+            </div>
+            <form id="walletForm">
+              <input id="walletAmount" type="number" min="1" placeholder="Valor ganho em €" required />
+              <button class="primary" type="submit">Adicionar ganho</button>
+            </form>
+          </div>
+
+          <ul class="history" id="historyList"></ul>
+        </section>
+
+        <section class="section" id="results">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Resultados</p>
+              <h2>Greens e Reds</h2>
+            </div>
+          </div>
+
+          <article class="feed-panel">
+            <div class="form-title">
+              <h3>Historico depois do jogo terminar</h3>
+              <span>Vitorias e perdas</span>
+            </div>
+            <div class="compact-list" id="resultsHistoryList"></div>
+          </article>
+        </section>
+
+        <section class="section" id="admin">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Admin</p>
+              <h2>Pagamentos e resultados</h2>
+            </div>
+          </div>
+
+          <div class="admin-grid">
+            <article class="admin-panel">
+              <div class="form-title">
+                <h3>Pedidos VIP pendentes</h3>
+                <span id="adminPendingCount">0 pendentes</span>
+              </div>
+              <div class="admin-list" id="adminPayments"></div>
+            </article>
+
+            <article class="admin-panel">
+              <div class="form-title">
+                <h3>Resultados registados</h3>
+                <span id="adminProfitTotal">0 €</span>
+              </div>
+              <div class="admin-list" id="adminResults"></div>
+            </article>
+          </div>
+
+          <div class="notice">
+            <strong>Como usar</strong>
+            <p>
+              Confirma o dinheiro no teu MB WAY ou banco. Depois marca o pedido como pago e envia ao cliente o codigo VIP configurado no servidor.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="admin-login hidden" id="adminLogin" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle">
+      <form class="admin-login-panel" id="adminLoginForm">
+        <h2 id="adminLoginTitle">Acesso Admin</h2>
+        <p>Introduz a palavra-passe para gerir palpites, pagamentos e resultados.</p>
+        <input id="adminPasswordInput" type="password" placeholder="Palavra-passe" autocomplete="current-password" />
+        <div class="admin-actions">
+          <button class="primary" type="submit">Entrar</button>
+          <button class="ghost" id="closeAdminLoginBtn" type="button">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
