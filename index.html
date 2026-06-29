@@ -84,19 +84,19 @@
         <section class="section active" id="dashboard">
           <div class="metrics">
             <article>
-              <span>Taxa simulada</span>
-              <strong>78%</strong>
-              <small>Ultimos 30 palpites</small>
+              <span>Taxa de acerto</span>
+              <strong id="accuracyMetric">0%</strong>
+              <small>Resultados Green/Red</small>
             </article>
             <article>
-              <span>Palpites hoje</span>
-              <strong id="todayCount">0</strong>
-              <small>Free e VIP</small>
+              <span>Greens</span>
+              <strong id="greenMetric">0</strong>
+              <small>Vitorias registadas</small>
             </article>
             <article>
-              <span>Ganhos registados</span>
-              <strong id="profitMetric">0 €</strong>
-              <small>Greens e Reds</small>
+              <span>Reds</span>
+              <strong id="profitMetric">0</strong>
+              <small>Perdas registadas</small>
             </article>
           </div>
 
@@ -139,6 +139,11 @@
                 <b>Free</b>
               </div>
             </div>
+          </div>
+
+          <div class="responsible-banner">
+            <strong>+18</strong>
+            <p>Apostas envolvem risco. Joga com responsabilidade e aposta apenas valores que podes perder.</p>
           </div>
 
         </section>
@@ -207,19 +212,19 @@
           <div class="plans">
             <article class="plan">
               <span>Semanal</span>
-              <strong>25 €</strong>
+              <strong>25 â‚¬</strong>
               <p>Acesso a palpites VIP durante 7 dias.</p>
               <button class="primary subscribe" data-plan="Semanal" type="button">Ver pagamento</button>
             </article>
             <article class="plan featured">
               <span>Mensal</span>
-              <strong>80 €</strong>
+              <strong>80 â‚¬</strong>
               <p>Melhor custo para membros ativos da comunidade.</p>
               <button class="primary subscribe" data-plan="Mensal" type="button">Ver pagamento</button>
             </article>
             <article class="plan">
               <span>Premium</span>
-              <strong>120 €</strong>
+              <strong>120 â‚¬</strong>
               <p>VIP completo com entradas de maior confianca.</p>
               <button class="primary subscribe" data-plan="Premium" type="button">Ver pagamento</button>
             </article>
@@ -253,9 +258,9 @@
               <label>
                 Plano
                 <select id="paymentPlan">
-                  <option value="Semanal">Semanal - 25 €</option>
-                  <option value="Mensal">Mensal - 80 €</option>
-                  <option value="Premium">Premium - 120 €</option>
+                  <option value="Semanal">Semanal - 25 â‚¬</option>
+                  <option value="Mensal">Mensal - 80 â‚¬</option>
+                  <option value="Premium">Premium - 120 â‚¬</option>
                 </select>
               </label>
               <label>
@@ -310,11 +315,11 @@
           <div class="wallet-panel">
             <div>
               <span>Total registado</span>
-              <strong id="walletTotal">0 €</strong>
+              <strong id="walletTotal">0 â‚¬</strong>
               <p>Controla manualmente os ganhos dos palpites acertados.</p>
             </div>
             <form id="walletForm">
-              <input id="walletAmount" type="number" min="1" placeholder="Valor ganho em €" required />
+              <input id="walletAmount" type="number" min="1" placeholder="Valor ganho em â‚¬" required />
               <button class="primary" type="submit">Adicionar ganho</button>
             </form>
           </div>
@@ -350,6 +355,32 @@
           <div class="admin-grid">
             <article class="admin-panel">
               <div class="form-title">
+                <h3>Visitas do site</h3>
+                <span>Privado</span>
+              </div>
+              <div class="admin-analytics">
+                <div>
+                  <span>Total</span>
+                  <strong id="adminVisitTotal">0</strong>
+                </div>
+                <div>
+                  <span>Hoje</span>
+                  <strong id="adminVisitToday">0</strong>
+                </div>
+                <div>
+                  <span>Mobile</span>
+                  <strong id="adminVisitMobile">0</strong>
+                </div>
+                <div>
+                  <span>Desktop</span>
+                  <strong id="adminVisitDesktop">0</strong>
+                </div>
+              </div>
+              <p class="admin-last-visit" id="adminLastVisit">Ultima visita: sem registo</p>
+            </article>
+
+            <article class="admin-panel">
+              <div class="form-title">
                 <h3>Pedidos VIP pendentes</h3>
                 <span id="adminPendingCount">0 pendentes</span>
               </div>
@@ -359,7 +390,7 @@
             <article class="admin-panel">
               <div class="form-title">
                 <h3>Resultados registados</h3>
-                <span id="adminProfitTotal">0 €</span>
+                <span id="adminProfitTotal">0 â‚¬</span>
               </div>
               <div class="admin-list" id="adminResults"></div>
             </article>
@@ -388,7 +419,11 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <a class="floating-whatsapp" id="quickWhatsappLink" href="https://wa.me/244955523337" target="_blank" rel="noopener">
+      WhatsApp
+    </a>
 
     <script src="app.js"></script>
   </body>
 </html>
+
