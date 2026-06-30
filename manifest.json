@@ -1,0 +1,19 @@
+{
+  "name": "JD-Tips",
+  "short_name": "JD-Tips",
+  "description": "Palpites Free e VIP com pagamentos por MB WAY e Multibanco.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101820",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
