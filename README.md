@@ -1,1 +1,0 @@
-# outputs-jd-tips.
